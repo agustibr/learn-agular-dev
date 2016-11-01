@@ -3,7 +3,10 @@
 
 angular.module('LunchCheck', [])
 
-.controller('LunchCheckController', function ($scope){
+.controller('LunchCheckController', LunchCheckController);
+
+LunchCheckController.$inject = ['$scope'];
+function LunchCheckController($scope){
   $scope.items = "";
   $scope.msg = "";
   $scope.alertClass = ""
@@ -24,6 +27,6 @@ angular.module('LunchCheck', [])
     $scope.msg = "";
     $scope.alertClass = ""
   };
-});
+};
 
 })();

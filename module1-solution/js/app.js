@@ -3,7 +3,10 @@
 
 angular.module('LunchCheck', [])
 
-.controller('LunchCheckController', function ($scope){
+.controller('LunchCheckController', LunchCheckController);
+
+LunchCheckController.$inject = ['$scope'];
+function LunchCheckController($scope){
   $scope.items = "";
   $scope.msg = "";
   $scope.sayWhat = function (items) {
@@ -12,6 +15,6 @@ angular.module('LunchCheck', [])
     else if ( numItems <= 3) $scope.msg = "Enjoy!";
     else $scope.msg = "Too much!";
   };
-});
+};
 
 })();
