@@ -1,0 +1,16 @@
+<div class="list-group" ng-show="foundItemsCtrl.foundItems.length > 0" ng-cloak>
+  <div class="list-group-item" ng-repeat="(index, item) in foundItemsCtrl.foundItems">
+    <button ng-click="foundItemsCtrl.onRemove({index: index})" class="btn btn-xs btn-danger pull-right">Don't want this one!</button>
+    <h4 class="list-group-item-heading">
+      <span class="badge">{{ item.short_name }}</span>
+      <span>{{ item.name }}</span>
+    </h4>
+    <p class="list-group-item-text">
+      {{ item.description }}
+    </p>
+  </div>
+</div>
+
+<div ng-show="foundItemsCtrl.foundItems.length == 0" class="alert alert-danger" role="alert">
+  Nothing found
+</div>

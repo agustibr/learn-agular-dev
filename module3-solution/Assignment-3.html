@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta charset="utf-8"><style>@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAYcAA0AAAAACjQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAABMAAAABwAAAAca8vGTk9TLzIAAAFMAAAARAAAAFZG1VHVY21hcAAAAZAAAAA+AAABQgAP9AdjdnQgAAAB0AAAAAQAAAAEACICiGdhc3AAAAHUAAAACAAAAAj//wADZ2x5ZgAAAdwAAADRAAABEKyikaNoZWFkAAACsAAAAC0AAAA2AtXoA2hoZWEAAALgAAAAHAAAACQHngNFaG10eAAAAvwAAAAQAAAAEAwAACJsb2NhAAADDAAAAAoAAAAKALIAVG1heHAAAAMYAAAAHwAAACABEAB2bmFtZQAAAzgAAALBAAAFu3I9x/Nwb3N0AAAF/AAAAB0AAAAvaoFvbwAAAAEAAAAAzBdyYwAAAADP2IQvAAAAAM/bz7t4nGNgZGFgnMDAysDB1Ml0hoGBoR9CM75mMGLkYGBgYmBlZsAKAtJcUxgcPsR8iGF2+O/AEMPsznAYKMwIkgMA5REMOXicY2BgYGaAYBkGRgYQsAHyGMF8FgYFIM0ChED+h5j//yEk/3KoSgZGNgYYk4GRCUgwMaACRoZhDwCs7QgGAAAAIgKIAAAAAf//AAJ4nHWMMQrCQBBF/0zWrCCIKUQsTDCL2EXMohYGSSmorScInsRGL2DOYJe0Ntp7BK+gJ1BxF1stZvjz/v8DRghQzEc4kIgKwiAppcA9LtzKLSkdNhKFY3HF4lK69ExKslx7Xa+vPRVS43G98vG1DnkDMIBUgFN0MDXflU8tbaZOUkXUH0+U27RoRpOIyCKjbMCVejwypzJJG4jIwb43rfl6wbwanocrJm9XFYfskuVC5K/TPyczNU7b84CXcbxks1Un6H6tLH9vf2LRnn8Ax7A5WQAAAHicY2BkYGAA4teL1+yI57f5ysDNwgAC529f0kOmWRiYVgEpDgYmEA8AUzEKsQAAAHicY2BkYGB2+O/AEMPCAAJAkpEBFbAAADgKAe0EAAAiAAAAAAQAAAAEAAAAAAAAKgAqACoAiAAAeJxjYGRgYGBhsGFgYgABEMkFhAwM/xn0QAIAD6YBhwB4nI1Ty07cMBS9QwKlQapQW3VXySvEqDCZGbGaHULiIQ1FKgjWMxknMfLEke2A+IJu+wntrt/QbVf9gG75jK577Lg8K1qQPCfnnnt8fX1NRC/pmjrk/zprC+8D7tBy9DHgBXoWfQ44Av8t4Bj4Z8CLtBL9CniJluPXASf0Lm4CXqFX8Q84dOLnMB17N4c7tBo1AS/Qi+hTwBH4rwHHwN8DXqQ30XXAS7QaLwSc0Gn8NuAVWou/gFmnjLrEaEh9GmDdDGgL3B4JsrRPDU2hTOiMSuJUIdKQQayiAth69r6akSSFqIJuA19TrzCIaY8sIoxyrNIrL//pw7A2iMygkX5vDj+G+kuoLdX4GlGK/8Lnlz6/h9MpmoO9rafrz7ILXEHHaAx95s9lsI7AHNMBWEZHULnfAXwG9/ZqdzLI08iuwRloXE8kfhXYAvE23+23DU3t626rbs8/8adv+9DWknsHp3E17oCf+Z48rvEQNZ78paYM38qfk3v/u3l3u3GXN2Dmvmvpf1Srwk3pB/VSsp512bA/GG5i2WJ7wu430yQ5K3nFGiOqgtmSB5pJVSizwaacmUZzZhXLlZTq8qGGFY2YcSkqbth6aW1tRmlaCFs2016m5qn36SbJrqosG4uMV4aP2PHBmB3tjtmgN2izkGQyLWprekbIntJFing32a5rKWCN/SdSoga45EJykyQ7asZvHQ8PTm6cslIpwyeyjbVltNikc2HTR7YKh9LBl9DADC0U/jLcBZDKrMhUBfQBvXRzLtFtjU9eNHKin0x5InTqb8lNpfKv1s1xHzTXRqgKzek/mb7nB8RZTCDhGEX3kK/8Q75AmUM/eLkfA+0Hi908Kx4eNsMgudg5GLdRD7a84npi+YxNr5i5KIbW5izXas7cHXIMAau1OueZhfj+cOcP3P8MNIWLyYOBuxL6DRylJ4cAAAB4nGNgYoAALjDJyIAOWMCiTIxMLDmZedkABtIBygAAAA==) format('woff');
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 980px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+body .markdown-body {
+    padding: 45px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    word-wrap: break-word;
+}
+
+pre {
+    font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+.markdown-body {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  color: #333;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background-color: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body input {
+  font: 13px / 1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.markdown-body a {
+  color: #4078c0;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before {
+  display: table;
+  content: "";
+}
+
+.markdown-body hr:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+.markdown-body .select::-ms-expand {
+  opacity: 0;
+}
+
+.markdown-body .octicon {
+  font: normal normal normal 16px/1 octicons-anchor;
+  display: inline-block;
+  text-decoration: none;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.markdown-body .octicon-link:before {
+  content: '\f05c';
+}
+
+.markdown-body:before {
+  display: table;
+  content: "";
+}
+
+.markdown-body:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+.markdown-body .anchor {
+  display: inline-block;
+  padding-right: 2px;
+  margin-left: -18px;
+}
+
+.markdown-body .anchor:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  color: #000;
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  visibility: visible;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h1 .anchor {
+  line-height: 1;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 .anchor {
+  line-height: 1;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h3 .anchor {
+  line-height: 1.2;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h4 .anchor {
+  line-height: 1.2;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h5 .anchor {
+  line-height: 1.1;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body h6 .anchor {
+  line-height: 1.1;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  box-sizing: content-box;
+  background-color: #fff;
+}
+
+.markdown-body code {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+
+.markdown-body .highlight pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+.markdown-body kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
+
+.markdown-body .pl-c {
+  color: #969896;
+}
+
+.markdown-body .pl-c1,
+.markdown-body .pl-s .pl-v {
+  color: #0086b3;
+}
+
+.markdown-body .pl-e,
+.markdown-body .pl-en {
+  color: #795da3;
+}
+
+.markdown-body .pl-s .pl-s1,
+.markdown-body .pl-smi {
+  color: #333;
+}
+
+.markdown-body .pl-ent {
+  color: #63a35c;
+}
+
+.markdown-body .pl-k {
+  color: #a71d5d;
+}
+
+.markdown-body .pl-pds,
+.markdown-body .pl-s,
+.markdown-body .pl-s .pl-pse .pl-s1,
+.markdown-body .pl-sr,
+.markdown-body .pl-sr .pl-cce,
+.markdown-body .pl-sr .pl-sra,
+.markdown-body .pl-sr .pl-sre {
+  color: #183691;
+}
+
+.markdown-body .pl-v {
+  color: #ed6a43;
+}
+
+.markdown-body .pl-id {
+  color: #b52a1d;
+}
+
+.markdown-body .pl-ii {
+  background-color: #b52a1d;
+  color: #f8f8f8;
+}
+
+.markdown-body .pl-sr .pl-cce {
+  color: #63a35c;
+  font-weight: bold;
+}
+
+.markdown-body .pl-ml {
+  color: #693a17;
+}
+
+.markdown-body .pl-mh,
+.markdown-body .pl-mh .pl-en,
+.markdown-body .pl-ms {
+  color: #1d3e81;
+  font-weight: bold;
+}
+
+.markdown-body .pl-mq {
+  color: #008080;
+}
+
+.markdown-body .pl-mi {
+  color: #333;
+  font-style: italic;
+}
+
+.markdown-body .pl-mb {
+  color: #333;
+  font-weight: bold;
+}
+
+.markdown-body .pl-md {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.markdown-body .pl-mi1 {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.markdown-body .pl-mdr {
+  color: #795da3;
+  font-weight: bold;
+}
+
+.markdown-body .pl-mo {
+  color: #1d3e81;
+}
+
+.markdown-body kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
+
+.markdown-body .plan-price-unit {
+  color: #767676;
+  font-weight: normal;
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 0.35em 0.25em -1.6em;
+  vertical-align: middle;
+}
+
+.markdown-body .plan-choice {
+  padding: 15px;
+  padding-left: 40px;
+  display: block;
+  border: 1px solid #e0e0e0;
+  position: relative;
+  font-weight: normal;
+  background-color: #fafafa;
+}
+
+.markdown-body .plan-choice.open {
+  background-color: #fff;
+}
+
+.markdown-body .plan-choice.open .plan-choice-seat-breakdown {
+  display: block;
+}
+
+.markdown-body .plan-choice-free {
+  border-radius: 3px 3px 0 0;
+}
+
+.markdown-body .plan-choice-paid {
+  border-radius: 0 0 3px 3px;
+  border-top: 0;
+  margin-bottom: 20px;
+}
+
+.markdown-body .plan-choice-radio {
+  position: absolute;
+  left: 15px;
+  top: 18px;
+}
+
+.markdown-body .plan-choice-exp {
+  color: #999;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.markdown-body .plan-choice-seat-breakdown {
+  margin-top: 10px;
+  display: none;
+}
+
+.markdown-body :checked+.radio-label {
+  z-index: 1;
+  position: relative;
+  border-color: #4078c0;
+}
+</style><title>Assignment-3</title></head><body><article class="markdown-body"><h1>
+<a id="user-content-module-3-coding-assignment" class="anchor" href="#module-3-coding-assignment" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Module 3 Coding Assignment</h1>
+
+<p><a href="https://www.coursera.org/learn/single-page-web-apps-with-angularjs">Click here to SIGN UP for the <strong><em>Single Page Web Applications with AngularJS</em></strong> course on Coursera</a>. It's FREE!</p>
+
+<p><strong>Time to put all that knowledge to code!</strong></p>
+
+<h2>
+<a id="user-content-time-to-complete" class="anchor" href="#time-to-complete" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Time to Complete</h2>
+
+<p>It should take about an 1 hour or less.</p>
+
+<p><strong>Ask questions in <a href="https://www.coursera.org/learn/single-page-web-apps-with-angularjs/discussions/weeks/3">Week 3 Discussion Forum</a>
+ if you get stuck! We are all learning, and going through getting stuck 
+and then unstuck (even with someone’s help) can be a very valuable 
+learning experience!</strong></p>
+
+<h3>
+<a id="user-content-do-not-be-scared-by-the-length-of-this-assignment-its-actually-a-fairly-short-one-i-just-wanted-to-explain-everything-as-clearly-as-i-could-and-break-it-down-into-smaller-steps-for-your-benefit" class="anchor" href="#do-not-be-scared-by-the-length-of-this-assignment-its-actually-a-fairly-short-one-i-just-wanted-to-explain-everything-as-clearly-as-i-could-and-break-it-down-into-smaller-steps-for-your-benefit" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><strong>DO
+ NOT be scared by the length of this assignment! It’s actually a fairly 
+short one. I just wanted to explain everything as clearly as I could and
+ break it down into smaller steps for your benefit.</strong>
+</h3>
+
+<h2>
+<a id="user-content-assignment-instructions" class="anchor" href="#assignment-instructions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Assignment Instructions</h2>
+
+<h3>
+<a id="user-content-general-idea" class="anchor" href="#general-idea" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>General Idea</h3>
+
+<p>You are going to be building a much simplified search of the menu 
+item descriptions using the restaurant server REST API we used in 
+Lecture 25, Part 2.</p>
+
+<p>The idea here is for the user to search the descriptions of menu 
+items. Then, given the list of matches of his search, give the user the 
+ability to throw the items they for sure don't want off the list, thus 
+narrowing it down to what they do want.</p>
+
+<p>Your task is create a text box and a button with the label "Narrow It Down For Me!".</p>
+
+<p>Initially, the user should just see a screen with the textbox and the
+ "Narrow It Down For Me!" button. Once the user enters something into 
+the textbox and clicks the button, your app will reach out to the server
+ and retrieve the list of menu items for the entire menu. Once 
+retrieved, your task is to loop through all the items and, for each 
+item, do a simple check if the string being searched for by the user 
+appears anywhere in the description of the item. If it does, that item 
+gets placed in a special <code>found</code> array. If it doesn't, you simply move on to the next item.</p>
+
+<p>Once your app goes through all the items, it should display the <code>found</code>
+ list of items. Each item in the list should show the name of the menu 
+item, its short_name, and the description. You can display the items in a
+ simple unordered list, with each piece of information separated by a 
+comma. OR be fancier and use some sort of a grid. Either way is fine. We
+ are not concentrating on style in this class.</p>
+
+<p>You should also provide a "Don't want this one!" button next to each 
+item in the list to give the user the ability to remove an item from 
+that list.</p>
+
+<p>If nothing is found as a result of the search OR if the user leaves 
+the textbox empty and clicks the "Narrow It Down For Me!" button, you 
+should simply display the message "Nothing found".</p>
+
+<p>To make things a bit easier, you can retrieve the items from the 
+server every time the user clicks the "Narrow It Down For Me!" button. 
+You don't have to cache the response. In other words, no matter what 
+actions the user has taken, if the "Narrow It Down For Me!" button is 
+clicked, all the data gets wiped out and the whole process starts all 
+over again. No requirement to remember what the user chose to throw off 
+the list last time.</p>
+
+<h3>
+<a id="user-content-rules" class="anchor" href="#rules" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Rules</h3>
+
+<p>Breaking one of these rules will cause you to fail the assignment:</p>
+
+<ul>
+<li>You are not allowed to use regular HTML <code>onclick</code> attribute to bind behavior to the button. You <strong>must</strong> use the AngularJS way of binding behavior.</li>
+<li>At no point should your Javascript code look up <em>anything</em> in the DOM of the browser.</li>
+</ul>
+
+<h3>
+<a id="user-content-steps" class="anchor" href="#steps" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Steps</h3>
+
+<p>Here is what you will need to do to complete the assignment:</p>
+
+<h4>
+<a id="user-content-steps-for-setups-similar-to-all-other-assignments" class="anchor" href="#steps-for-setups-similar-to-all-other-assignments" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Steps for Setups (similar to all other assignments)</h4>
+
+<ol>
+<li>(If you haven’t already) Create a GitHub.com account and a repository that you will use for this class.</li>
+<li>(If you haven’t already) Follow the Development Setup Video 
+(beginning of Module 1) instructions on how to create a repository and 
+set it up such that you can host and view your finished web pages on 
+GitHub Pages, i.e., GitHub.io domain name. You will need to provide that
+ URL for your peer review.</li>
+<li>Create a folder in your repository that will serve as a container 
+folder for your solution to this assignment. You can call it whatever 
+you want. For example, <code>module3-solution</code> or <code>mod3_solution</code>, etc.
+
+<ul>
+<li>You can do this by 'cloning' your repository with <code>git clone https://www.github.com/your_repo_url</code> to your local machine, creating <code>module3-solution</code> folder in the root of the repository directory along with a README.txt inside of the <code>module3-solution</code> directory. Then, you would do <code>git add .</code>, followed by <code>git commit -m 'New folder'</code>, followed by <code>git push</code> to upload the new folder with the README.txt to the GitHub repository.</li>
+</ul>
+</li>
+<li>HTML/CSS for the assignment
+
+<ul>
+<li>Option 1: Copy the <strong>contents</strong> of the folder <code>assignment3-starter-code</code> into the newly created folder from the previous step. If you cloned this repository, the assignment 3 folder is located in <code>root_dir_of_your_local_repo/assignments/assignment3/assignment3-starter-code</code>
+</li>
+<li>Option 2: Create the HTML/CSS yourself. Make sure to name the HTML file <code>index.html</code>.
+ The only requirement is that your HTML have the required parts as 
+described in the General Idea section. The rest is up to you.</li>
+</ul>
+</li>
+<li>Import AngularJS into your project and place a <code>&lt;script&gt;</code> tag right before the <code>&lt;/body&gt;</code> tag.</li>
+</ol>
+
+<h4>
+<a id="user-content-steps-for-implementing-assignment-requirements" class="anchor" href="#steps-for-implementing-assignment-requirements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Steps for Implementing Assignment Requirements</h4>
+
+<ol>
+<li>Declare <code>ng-app</code> either on the <code>html</code> or the <code>body</code> element. Name your app <code>NarrowItDownApp</code>.</li>
+<li>Create <code>app.js</code> in your project and declare an Angular module to match your <code>ng-app</code> declaration.</li>
+<li>Declare and create a NarrowItDownController (with controller as 
+syntax) that will wrap your search textbox and button as well as the 
+list of found items.</li>
+<li>
+<p>Declare and create MenuSearchService. The service should have the 
+following method: getMatchedMenuItems(searchTerm). That method will be 
+responsible for reaching out to the server (using the $http service) to 
+retrieve the list of all the menu items. Once it gets all the menu 
+items, it should loop through them to pick out the ones whose 
+description matches the searchTerm. Once a list of found items is 
+compiled, it should return that list (wrapped in a promise). Remember 
+that the <code>then</code> function itself returns a promise. Your method would roughly look like this:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">return</span> <span class="pl-en">$http</span>(<span class="pl-k">...</span>).<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi">result</span>) {
+    <span class="pl-c">// process result and only keep items that match</span>
+    <span class="pl-k">var</span> foundItems<span class="pl-k">...</span>
+
+    <span class="pl-c">// return processed items</span>
+    <span class="pl-k">return</span> foundItems;
+});</pre></div>
+
+<p>The URL for the REST Endpoint is <a href="https://davids-restaurant.herokuapp.com/menu_items.json">https://davids-restaurant.herokuapp.com/menu_items.json</a>.</p>
+</li>
+<li>The NarrowItDownController should be injected with the 
+MenuSearchService. The controller should call the getMatchedMenuItems 
+method when appropriate and store the result in a property called <code>found</code> attached to the controller instance.</li>
+<li>Declare and create <code>foundItems</code> directive. The list should be displayed using this <code>directive</code> which takes the <code>found</code>
+ array of items specified on it as an attribute (think one-way binding 
+with '&lt;'). To implement the functionality of the "Don't want this 
+one!" button, the directive should also provide an on-remove attribute 
+that will use function reference binding to invoke the parent controller
+ removal an item from the <code>found</code> array based on an index into the <code>found</code>
+ array. The index should be passed in from the directive to the 
+controller. (Note that we implemented almost identical type of behavior 
+in the Lecture 30 Part 2, so as long as you understood that code, it 
+should be very close to copy/paste). In the NarrowItDownController, 
+simply remove that item from the <code>found</code> array. You can do that using the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice">Array's splice() method</a>. For example, to remove an item with the index of 3 from the <code>found</code> array, you would call <code>found.splice(3, 1);</code>.</li>
+</ol>
+
+<h4>
+<a id="user-content-important-implementation-notes" class="anchor" href="#important-implementation-notes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Important Implementation Notes</h4>
+
+<ol>
+<li>Make sure all of your Javascript code is inside of an IIFE. (<em>If you don't know what that is or why we'd want to use it, brush up on it by looking through module 4 of <a href="https://www.coursera.org/learn/html-css-javascript-for-web-developers/">HTML, CSS, and Javascript for Web Developers</a> course I teach.</em>)</li>
+<li>Make sure all of your dependency injections are protected from minification.</li>
+<li>After you are done and satisfied with your solution, don't forget to add/commit/push your code to your repository.</li>
+</ol>
+
+<h2>
+<a id="user-content-important-reminders" class="anchor" href="#important-reminders" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><strong>IMPORTANT REMINDERS:</strong>
+</h2>
+
+<ul>
+<li>Closely follow the submission guidelines for this assignment on Coursera.org</li>
+<li>Make <strong>sure</strong> you provide the correct URL in your submission (it should be GitHub<b>.io</b>, <em>not</em> GitHub<b>.com</b>)</li>
+<li>Make <strong>sure</strong> to TEST your assignment not just on your 
+local machine, but ALSO once you deploy it on GitHub, using the URL you 
+are providing as part of your submission.</li>
+<li>This assignment will be peer-reviewed (and graded). The guidance 
+will be given such that if submission instructions are not followed, the
+ assignment is to be failed. This includes providing the wrong URL for 
+your deployment. Following instructions is very much part of software 
+development. After all, that's what software requirements are - 
+instructions to follow.</li>
+</ul>
+</article></body></html>
