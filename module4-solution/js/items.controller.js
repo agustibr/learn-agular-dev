@@ -6,6 +6,7 @@
   itemsController.$inject = ['response'];
   function itemsController(response) {
     this.items = response.data.menu_items;
+    this.category = response.data.category;
   }
 
 })();

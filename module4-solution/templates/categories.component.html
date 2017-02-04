@@ -1,6 +1,7 @@
 <div class="list-group">
   <a ng-repeat="category in $ctrl.categories" ui-sref="items({categoryName: category.short_name})" class="list-group-item">
-    <span ng-bind="category.name"></span>
     <span class="badge">{{category.short_name}}</span>
+    <h4 ng-bind="category.name" class="list-group-item-heading"></h4>
+    <p ng-bind="category.special_instructions" class="list-group-item-text"></p>
   </a>
 </div>
