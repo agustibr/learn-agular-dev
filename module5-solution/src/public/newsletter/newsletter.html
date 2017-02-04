@@ -1,0 +1,104 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="page-header">Sign up</h1>
+      <fieldset>
+        <form name='newsltrForm' novalidate>
+          <div 
+            class="form-group"
+            ng-class="{
+              'has-error':   newsltrForm.firstname.$invalid && newsltrForm.firstname.$touched, 'has-success': newsltrForm.firstname.$valid && newsltrForm.firstname.$touched
+              }">
+            <label class="control-label" for="firstname">First name</label>
+            <input type="text" name="firstname" placeholder="First name"
+              ng-model="newsltrCtrl.user.firstname"
+              required
+              class="form-control" >
+              <span class="help-block" 
+                ng-if="newsltrForm.firstname.$error.required && newsltrForm.firstname.$touched">
+                First name is required.
+              </span>
+          </div>
+
+          <div 
+            class="form-group"
+            ng-class="{
+              'has-error':   newsltrForm.lastname.$invalid && newsltrForm.lastname.$touched, 'has-success': newsltrForm.lastname.$valid && newsltrForm.lastname.$touched
+              }">    
+            <label class="control-label" for="lastname">Last name</label>
+            <input type="text" name="lastname" placeholder="Last name"
+              ng-model="newsltrCtrl.user.lastname"
+              required
+              class="form-control" >
+              <span class="help-block" 
+                ng-if="newsltrForm.lastname.$error.required && newsltrForm.lastname.$touched">
+                Last name is required.
+              </span>
+          </div>
+
+          <div 
+            class="form-group"
+            ng-class="{
+              'has-error':   newsltrForm.email.$invalid && newsltrForm.email.$touched, 'has-success': newsltrForm.email.$valid && newsltrForm.email.$touched
+              }">
+            <label class="control-label" for="email">Email address</label>
+            <input type="email" name="email" placeholder="Email"
+              ng-model="newsltrCtrl.user.email"
+              required
+              class="form-control">
+              <span 
+                class="help-block"
+                ng-if="newsltrForm.email.$invalid && newsltrForm.email.$touched">
+                Must be a valid email address: handle@domain format
+              </span>
+          </div>
+
+          <div 
+            class="form-group"
+            ng-class="{
+              'has-error':   newsltrForm.phone.$invalid && newsltrForm.phone.$touched, 'has-success': newsltrForm.phone.$valid && newsltrForm.phone.$touched
+              }">
+            <label class="control-label" for="phone">Phone number</label>
+            <input type="text" name="phone" placeholder="Phone ###-###-####"
+              ng-model="newsltrCtrl.user.phone"
+              pattern="(\d{3})-(\d{3})-(\d{4})"
+              class="form-control">
+              <span 
+                class="help-block"
+                ng-if="newsltrForm.phone.$invalid && newsltrForm.phone.$touched">
+                Phone must be in the format ###-###-####.
+              </span>
+          </div>
+
+          <div 
+            class="form-group"
+            ng-class="{
+              'has-error':   newsltrForm.short_name.$invalid && newsltrForm.short_name.$touched, 
+              'has-success': newsltrForm.short_name.$valid && newsltrForm.short_name.$touched
+              }">
+            <label class="control-label" for="short_name">Your favorite dish</label>
+            <input type="text" name="short_name" placeholder="Favorite dish number, e.g. A1"
+              ng-model="newsltrCtrl.user.short_name"
+              dish-available
+              class="form-control">
+              <span 
+                class="help-block"
+                ng-if="newsltrForm.short_name.$invalid && newsltrForm.short_name.$touched">
+                No such menu number exists. Try again.
+              </span>
+          </div>
+
+          <button
+            ng-disabled="newsltrForm.$invalid"
+            ng-click="newsltrCtrl.submit()"
+            class="btn btn-primary btn-block btn-lg">Submit</button>
+
+          <div ng-show="newsltrCtrl.submitted && !newsltrForm.$invalid" class="alert alert-success">
+            <a ui-sref="public.myinfo" class="alert-link">Your information</a> has been saved.
+          </div>
+        </form>
+      </fieldset>
+
+    </div>
+  </div>
+</div>

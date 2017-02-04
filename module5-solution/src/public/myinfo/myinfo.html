@@ -1,0 +1,33 @@
+<div class="container">
+  <div ng-if="!myinfoCtrl.loggedIn" class="alert alert-danger">
+      Not Signed Up Yet. 
+      <a ui-sref="public.newsletter" class="alert-link"> Sign up Now!</a> 
+  </div>
+  <div ng-if="myinfoCtrl.loggedIn">
+
+    <h1 class="page-header">Your Information</h1>
+    <dl class="dl-horizontal">
+      <dt>First name:</dt>
+      <dd>{{ myinfoCtrl.user.firstname }}</dd>
+      
+      <dt>Last name:</dt>
+      <dd>{{ myinfoCtrl.user.lastname }}</dd>
+
+      <dt>Phone number:</dt>
+      <dd>{{ myinfoCtrl.user.phone }}</dd>
+
+      <dt>Email address:</dt>
+      <dd>{{ myinfoCtrl.user.email }}</dd>
+
+      <dt>Your favorite dish:</dt>
+      <dd>
+        <div class="row">
+          <menu-item menu-item="myinfoCtrl.menuItem"></menu-item> 
+        </div>
+      </dd>
+    </dl>
+    
+  </div>
+
+
+</div>
